@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataDoctor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b66'/%3E%3Cpath d='M4 17h6l3-7 5 13 3-6h7' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#" id="home">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="7" class="brand-bg"/><path d="M4 17h6l3-7 5 13 3-6h7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Data<b>Doctor</b></span>
+  </a>
+  <nav class="steps" id="steps">
+    <span data-step="intake">1 · Dataset</span>
+    <span data-step="usecase">2 · Use case</span>
+    <span data-step="running">3 · Examination</span>
+    <span data-step="report">4 · Diagnosis</span>
+  </nav>
+  <div class="top-actions">
+    <button class="ghost" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= 1. intake ======================= -->
+  <section class="view" id="view-intake">
+    <div class="hero">
+      <p class="eyebrow">Pre-training dataset audit</p>
+      <h1>Before you train a model,<br>find out if your data can actually answer your question.</h1>
+      <p class="lede">Give DataDoctor a table and tell it what you want to predict and why. It checks hygiene, leakage, real signal, validation realism and subgroups,
+        then recommends a model, a validation plan, a training budget and the loss curves to expect, and explains every finding in plain language.</p>
+    </div>
+    <div class="intake-grid">
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept=".csv,.tsv,.txt,.xlsx,.xls" hidden>
+        <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M24 32V10m0 0-8 8m8-8 8 8M10 30v6a4 4 0 0 0 4 4h20a4 4 0 0 0 4-4v-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <strong>Drop a CSV / Excel file here</strong>
+        <span>or click to browse · any tabular dataset · classification or regression</span>
+        <em id="dropMsg"></em>
+      </label>
+      <div class="demos">
+        <h3>Or open a case file</h3>
+        <div id="demoList" class="demo-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 2. use case ======================= -->
+  <section class="view" id="view-usecase" hidden>
+    <div class="uc-grid">
+      <aside class="ds-card" id="dsCard"></aside>
+      <form class="uc-form" id="ucForm" autocomplete="off"></form>
+    </div>
+  </section>
+
+  <!-- ======================= 3. running ======================= -->
+  <section class="view" id="view-running" hidden>
+    <div class="run-card">
+      <p class="eyebrow">Examination in progress</p>
+      <h2 id="runTitle">Running checks…</h2>
+      <ol id="stageList" class="stage-list"></ol>
+      <p class="muted small" id="runClock"></p>
+    </div>
+  </section>
+
+  <!-- ======================= 4. report ======================= -->
+  <section class="view" id="view-report" hidden>
+    <div class="report">
+      <aside class="toc" id="toc"></aside>
+      <article id="reportBody"></article>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" hidden></div>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

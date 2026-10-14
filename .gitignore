@@ -1,0 +1,4 @@
+__pycache__/
+reports/
+datadoctor_report.json
+.claude/
