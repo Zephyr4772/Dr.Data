@@ -1,8 +1,8 @@
-# DataDoctor
+# Dr.Data
 
 **A pre-training audit for tabular datasets. You give it a dataset and a use case, and it tells you whether the data can support that use case. If it can, it gives you a plan for training the model.**
 
-Most ML projects start by training a model. DataDoctor works on the step before that, which usually gets skipped: *is this data fit for the question I'm asking it?* The same table can be fine for one use case and useless for another. For example, the included retail dataset predicts profit well (once you remove a hidden leak) but carries **zero** signal for predicting returns. No amount of fine-tuning changes that.
+Most ML projects start by training a model. Dr.Data works on the step before that, which usually gets skipped: *is this data fit for the question I'm asking it?* The same table can be fine for one use case and useless for another. For example, the included retail dataset predicts profit well (once you remove a hidden leak) but carries **zero** signal for predicting returns. No amount of fine-tuning changes that.
 
 ---
 
