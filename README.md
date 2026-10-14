@@ -1,5 +1,12 @@
 # Dr.Data
 
+![Python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F7931E?logo=scikitlearn&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white)
+![Frontend](https://img.shields.io/badge/frontend-vanilla%20JS%20%2B%20SVG-F7DF1E?logo=javascript&logoColor=black)
+![Last commit](https://img.shields.io/github/last-commit/Zephyr4772/Dr.Data)
+![Stars](https://img.shields.io/github/stars/Zephyr4772/Dr.Data?style=social)
+
 **A pre-training audit for tabular datasets. You give it a dataset and a use case, and it tells you whether the data can support that use case. If it can, it gives you a plan for training the model.**
 
 Most ML projects start by training a model. Dr.Data works on the step before that, which usually gets skipped: *is this data fit for the question I'm asking it?* The same table can be fine for one use case and useless for another. For example, the included retail dataset predicts profit well (once you remove a hidden leak) but carries **zero** signal for predicting returns. No amount of fine-tuning changes that.
