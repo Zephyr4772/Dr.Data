@@ -1,4 +1,4 @@
-/* DataDoctor front-end: intake → use case → examination → diagnosis report */
+/* Dr.Data front-end: intake → use case → examination → diagnosis report */
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const E = Charts.esc, N = Charts.num;
